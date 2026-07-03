@@ -1,0 +1,12 @@
+.autosync/
+.vs/
+.idea/
+
+# Large local-only source assets. Keep generated indexes in git instead.
+sources/server-csharp-4.0.13/Libraries/SPTarkov.Server.Assets/SPT_Data/
+sources/server-csharp-4.0.13/Testing/
+sources/server-csharp-4.0.13/Libraries/SPTarkov.Server.Web/wwwroot/thank-you/
+
+
+# Ignore local source reference files
+sources/

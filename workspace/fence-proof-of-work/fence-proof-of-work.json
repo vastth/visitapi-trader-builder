@@ -1,0 +1,81 @@
+{
+  "69f1ce000000000000000001": {
+    "QuestName": "Proof of Work",
+    "_id": "69f1ce000000000000000001",
+    "acceptPlayerMessage": "69f1ce000000000000000001 acceptPlayerMessage",
+    "acceptanceAndFinishingSource": "eft",
+    "arenaLocations": [],
+    "canShowNotificationsInGame": true,
+    "changeQuestMessageText": "69f1ce000000000000000001 changeQuestMessageText",
+    "completePlayerMessage": "69f1ce000000000000000001 completePlayerMessage",
+    "conditions": {
+      "AvailableForFinish": [
+        {
+          "id": "69f1ce000000000000000010",
+          "conditionType": "HandoverItem",
+          "dynamicLocale": false,
+          "target": [
+            "59f32bb586f774757e1e8442",
+            "59f32c3b86f77472a31742f0"
+          ],
+          "value": 1,
+          "onlyFoundInRaid": false,
+          "dogtagLevel": 0
+        }
+      ],
+      "AvailableForStart": [],
+      "Fail": []
+    },
+    "declinePlayerMessage": "69f1ce000000000000000001 declinePlayerMessage",
+    "description": "69f1ce000000000000000001 description",
+    "failMessageText": "69f1ce000000000000000001 failMessageText",
+    "gameModes": [],
+    "image": "/files/quest/icon/fence-proof-of-work.png",
+    "instantComplete": false,
+    "isKey": false,
+    "location": "any",
+    "name": "69f1ce000000000000000001 name",
+    "note": "69f1ce000000000000000001 note",
+    "progressSource": "eft",
+    "rankingModes": [],
+    "restartable": false,
+    "rewards": {
+      "Fail": [],
+      "Started": [],
+      "Success": [
+        {
+          "availableInGameEditions": [],
+          "findInRaid": false,
+          "gameMode": [
+            "regular",
+            "pve"
+          ],
+          "id": "69f1ce000000000000000011",
+          "isEncoded": false,
+          "isHidden": false,
+          "items": [
+            {
+              "_id": "69f1ce000000000000000012",
+              "_tpl": "5449016a4bdc2d6f028b456f",
+              "upd": {
+                "StackObjectsCount": 10000
+              }
+            }
+          ],
+          "target": "69f1ce000000000000000012",
+          "type": "Item",
+          "unknown": false,
+          "value": 10000
+        }
+      ]
+    },
+    "secretQuest": false,
+    "side": "Pmc",
+    "startedMessageText": "69f1ce000000000000000001 startedMessageText",
+    "status": 0,
+    "successMessageText": "69f1ce000000000000000001 successMessageText",
+    "templateId": "69f1ce000000000000000001",
+    "traderId": "579dc571d53a0658a154fbec",
+    "type": "Completion"
+  }
+}

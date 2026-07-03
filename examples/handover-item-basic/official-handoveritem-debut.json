@@ -1,0 +1,25 @@
+{
+  "source": "D:/EFT 4/SPT/SPT_Data/database/templates/quests.json",
+  "questId": "5936d90786f7742b1420ba5b",
+  "questName": "Debut",
+  "location": "any",
+  "stage": "AvailableForFinish",
+  "condition": {
+    "conditionType": "HandoverItem",
+    "dogtagLevel": 0,
+    "dynamicLocale": false,
+    "globalQuestCounterId": "",
+    "id": "596737cb86f77463a8115efd",
+    "index": 3,
+    "isEncoded": false,
+    "maxDurability": 100,
+    "minDurability": 0,
+    "onlyFoundInRaid": false,
+    "parentId": "",
+    "target": [
+      "54491c4f4bdc2db1078b4568"
+    ],
+    "value": 2,
+    "visibilityConditions": []
+  }
+}

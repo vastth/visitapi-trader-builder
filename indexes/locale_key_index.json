@@ -1,0 +1,47 @@
+{
+  "source": "D:\\EFT 4\\MOD-CREAT\\VisitAPI-0.4\\visitapi-trader-builder-zh\\references\\extracts\\locales\\core-zh-en-names.json",
+  "quest_required_suffixes": [
+    "name",
+    "description",
+    "note",
+    "startedMessageText",
+    "successMessageText",
+    "failMessageText",
+    "acceptPlayerMessage",
+    "declinePlayerMessage",
+    "completePlayerMessage",
+    "changeQuestMessageText"
+  ],
+  "quest_key_template": "{questId} {suffix}",
+  "handover_condition_key_rule": "?? HandoverItem condition ? id ?????? quest locale ?????",
+  "global_samples": {
+    "5449016a4bdc2d6f028b456f Name": {
+      "ch": "卢布",
+      "en": "Roubles"
+    },
+    "5449016a4bdc2d6f028b456f ShortName": {
+      "ch": "卢布",
+      "en": "RUB"
+    },
+    "59f32bb586f774757e1e8442 Name": {
+      "ch": "BEAR 狗牌",
+      "en": "Dogtag BEAR"
+    },
+    "59f32bb586f774757e1e8442 ShortName": {
+      "ch": "BEAR",
+      "en": "BEAR"
+    },
+    "59f32c3b86f77472a31742f0 Name": {
+      "ch": "USEC 狗牌",
+      "en": "Dogtag USEC"
+    },
+    "59f32c3b86f77472a31742f0 ShortName": {
+      "ch": "USEC",
+      "en": "USEC"
+    },
+    "579dc571d53a0658a154fbec Nickname": {
+      "ch": "Fence",
+      "en": "Fence"
+    }
+  }
+}

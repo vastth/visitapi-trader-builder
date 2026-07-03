@@ -1,0 +1,313 @@
+{
+  "source": {
+    "maps": "D:\\EFT 4\\MOD-CREAT\\VisitAPI-0.4\\visitapi-trader-builder-zh\\references\\extracts\\maps\\map-ids-and-exits.json",
+    "zoneExamples": "D:\\EFT 4\\MOD-CREAT\\VisitAPI-0.4\\visitapi-trader-builder-zh\\references\\extracts\\maps\\zoneid-examples-from-official-quests.json"
+  },
+  "maps": [
+    {
+      "source": "D:/EFT 4/SPT/SPT_Data/database/locations/bigmap/base.json",
+      "directory": "bigmap",
+      "locationId": "bigmap",
+      "name": "Customs",
+      "exits_sample": [
+        "Crossroads",
+        "Smuggler's Boat",
+        "RUAF Roadblock",
+        "ZB-1012",
+        "ZB-1011",
+        "Trailer Park",
+        "Old Gas Station",
+        "Dorms V-Ex",
+        "EXFIL_ZB013",
+        "customs_sniper_exit",
+        "Custom_scav_pmc"
+      ],
+      "exits_count": 11
+    },
+    {
+      "source": "D:/EFT 4/SPT/SPT_Data/database/locations/woods/base.json",
+      "directory": "woods",
+      "locationId": "Woods",
+      "name": "Woods",
+      "exits_sample": [
+        "ZB-016",
+        "Outskirts",
+        "UN Roadblock",
+        "RUAF Gate",
+        "ZB-014",
+        "South V-Ex",
+        "Factory Gate",
+        "un-sec",
+        "wood_sniper_exit"
+      ],
+      "exits_count": 9
+    },
+    {
+      "source": "D:/EFT 4/SPT/SPT_Data/database/locations/shoreline/base.json",
+      "directory": "shoreline",
+      "locationId": "Shoreline",
+      "name": "Shoreline",
+      "exits_sample": [
+        "Tunnel",
+        "Rock Passage",
+        "Pier Boat",
+        "CCP Temporary",
+        "Road to Customs",
+        "Lighthouse_pass",
+        "Road_at_railbridge",
+        "Shorl_V-Ex",
+        "RedRebel_alp",
+        "Smugglers_Trail_coop"
+      ],
+      "exits_count": 10
+    },
+    {
+      "source": "D:/EFT 4/SPT/SPT_Data/database/locations/laboratory/base.json",
+      "directory": "laboratory",
+      "locationId": "laboratory",
+      "name": "Laboratory",
+      "exits_sample": [
+        "lab_Parking_Gate",
+        "lab_Hangar_Gate",
+        "lab_Elevator_Med",
+        "lab_Under_Storage_Collector",
+        "lab_Elevator_Main",
+        "lab_Vent",
+        "lab_Elevator_Cargo"
+      ],
+      "exits_count": 7
+    },
+    {
+      "source": "D:/EFT 4/SPT/SPT_Data/database/locations/labyrinth/base.json",
+      "directory": "labyrinth",
+      "locationId": "Labyrinth",
+      "name": "Labyrinth",
+      "exits_sample": [
+        "labir_exit"
+      ],
+      "exits_count": 1
+    },
+    {
+      "source": "D:/EFT 4/SPT/SPT_Data/database/locations/sandbox/base.json",
+      "directory": "sandbox",
+      "locationId": "Sandbox",
+      "name": "Sandbox",
+      "exits_sample": [
+        "Unity_free_exit",
+        "Sandbox_VExit",
+        "Sniper_exit",
+        "Scav_coop_exit",
+        "Nakatani_stairs_free_exit"
+      ],
+      "exits_count": 5
+    },
+    {
+      "source": "D:/EFT 4/SPT/SPT_Data/database/locations/sandbox_high/base.json",
+      "directory": "sandbox_high",
+      "locationId": "Sandbox_high",
+      "name": "Sandbox",
+      "exits_sample": [
+        "Unity_free_exit",
+        "Sandbox_VExit",
+        "Sniper_exit",
+        "Scav_coop_exit",
+        "Nakatani_stairs_free_exit"
+      ],
+      "exits_count": 5
+    }
+  ],
+  "zoneExamples": [
+    {
+      "questId": "59674eb386f774539f14813a",
+      "questName": "Delivery From the Past",
+      "location": "any",
+      "stage": "AvailableForFinish",
+      "conditionType": "LeaveItemAtLocation",
+      "zoneId": "case_extraction",
+      "target": [
+        "591092ef86f7747bb8703422"
+      ],
+      "plantTime": 10
+    },
+    {
+      "questId": "5979eee086f774311955e614",
+      "questName": "Golden Swag",
+      "location": "56f40101d2720b2a4d8b45d6",
+      "stage": "AvailableForFinish",
+      "conditionType": "LeaveItemAtLocation",
+      "zoneId": "extraction_zone_zibbo",
+      "target": [
+        "5939a00786f7742fe8132936"
+      ],
+      "plantTime": 30
+    },
+    {
+      "questId": "597a0f5686f774273b74f676",
+      "questName": "Chemical - Part 4",
+      "location": "56f40101d2720b2a4d8b45d6",
+      "stage": "AvailableForFinish",
+      "conditionType": "PlaceBeacon",
+      "zoneId": "gazel",
+      "target": [
+        "5991b51486f77447b112d44f"
+      ],
+      "plantTime": 30
+    },
+    {
+      "questId": "597a160786f77477531d39d2",
+      "questName": "Out of Curiosity",
+      "location": "56f40101d2720b2a4d8b45d6",
+      "stage": "AvailableForFinish",
+      "conditionType": "PlaceBeacon",
+      "zoneId": "gazel",
+      "target": [
+        "5991b51486f77447b112d44f"
+      ],
+      "plantTime": 30
+    },
+    {
+      "questId": "597a171586f77405ba6887d3",
+      "questName": "Big Customer",
+      "location": "56f40101d2720b2a4d8b45d6",
+      "stage": "AvailableForFinish",
+      "conditionType": "PlaceBeacon",
+      "zoneId": "gazel",
+      "target": [
+        "5991b51486f77447b112d44f"
+      ],
+      "plantTime": 30
+    },
+    {
+      "questId": "59c124d686f774189b3c843f",
+      "questName": "BP Depot",
+      "location": "56f40101d2720b2a4d8b45d6",
+      "stage": "AvailableForFinish",
+      "conditionType": "PlaceBeacon",
+      "zoneId": "fuel1",
+      "target": [
+        "5991b51486f77447b112d44f"
+      ],
+      "plantTime": 30
+    },
+    {
+      "questId": "59c124d686f774189b3c843f",
+      "questName": "BP Depot",
+      "location": "56f40101d2720b2a4d8b45d6",
+      "stage": "AvailableForFinish",
+      "conditionType": "PlaceBeacon",
+      "zoneId": "fuel2",
+      "target": [
+        "5991b51486f77447b112d44f"
+      ],
+      "plantTime": 30
+    },
+    {
+      "questId": "59c124d686f774189b3c843f",
+      "questName": "BP Depot",
+      "location": "56f40101d2720b2a4d8b45d6",
+      "stage": "AvailableForFinish",
+      "conditionType": "PlaceBeacon",
+      "zoneId": "fuel3",
+      "target": [
+        "5991b51486f77447b112d44f"
+      ],
+      "plantTime": 30
+    },
+    {
+      "questId": "59c124d686f774189b3c843f",
+      "questName": "BP Depot",
+      "location": "56f40101d2720b2a4d8b45d6",
+      "stage": "AvailableForFinish",
+      "conditionType": "PlaceBeacon",
+      "zoneId": "fuel4",
+      "target": [
+        "5991b51486f77447b112d44f"
+      ],
+      "plantTime": 30
+    },
+    {
+      "questId": "5a03173786f77451cb427172",
+      "questName": "Spa Tour - Part 2",
+      "location": "5704e554d2720bac5b8b456e",
+      "stage": "AvailableForFinish",
+      "conditionType": "PlaceBeacon",
+      "zoneId": "place_peacemaker_008_2_N1",
+      "target": [
+        "5991b51486f77447b112d44f"
+      ],
+      "plantTime": 30
+    },
+    {
+      "questId": "5a03173786f77451cb427172",
+      "questName": "Spa Tour - Part 2",
+      "location": "5704e554d2720bac5b8b456e",
+      "stage": "AvailableForFinish",
+      "conditionType": "PlaceBeacon",
+      "zoneId": "place_peacemaker_008_2_N2",
+      "target": [
+        "5991b51486f77447b112d44f"
+      ],
+      "plantTime": 30
+    },
+    {
+      "questId": "5a27b75b86f7742e97191958",
+      "questName": "Fishing Gear",
+      "location": "5704e554d2720bac5b8b456e",
+      "stage": "AvailableForFinish",
+      "conditionType": "LeaveItemAtLocation",
+      "zoneId": "place_peacemaker_001",
+      "target": [
+        "55801eed4bdc2d89578b4588"
+      ],
+      "plantTime": 30
+    },
+    {
+      "questId": "5a27b75b86f7742e97191958",
+      "questName": "Fishing Gear",
+      "location": "5704e554d2720bac5b8b456e",
+      "stage": "AvailableForFinish",
+      "conditionType": "LeaveItemAtLocation",
+      "zoneId": "place_peacemaker_001",
+      "target": [
+        "544fb5454bdc2df8738b456a"
+      ],
+      "plantTime": 30
+    },
+    {
+      "questId": "5a27b7a786f774579c3eb376",
+      "questName": "Tigr Safari",
+      "location": "56f40101d2720b2a4d8b45d6",
+      "stage": "AvailableForFinish",
+      "conditionType": "PlaceBeacon",
+      "zoneId": "place_peacemaker_002_N1",
+      "target": [
+        "5991b51486f77447b112d44f"
+      ],
+      "plantTime": 30
+    },
+    {
+      "questId": "5a27b7a786f774579c3eb376",
+      "questName": "Tigr Safari",
+      "location": "56f40101d2720b2a4d8b45d6",
+      "stage": "AvailableForFinish",
+      "conditionType": "PlaceBeacon",
+      "zoneId": "place_peacemaker_002_N2",
+      "target": [
+        "5991b51486f77447b112d44f"
+      ],
+      "plantTime": 30
+    },
+    {
+      "questId": "5a27b7a786f774579c3eb376",
+      "questName": "Tigr Safari",
+      "location": "56f40101d2720b2a4d8b45d6",
+      "stage": "AvailableForFinish",
+      "conditionType": "PlaceBeacon",
+      "zoneId": "place_peacemaker_002_N3",
+      "target": [
+        "5991b51486f77447b112d44f"
+      ],
+      "plantTime": 30
+    }
+  ]
+}

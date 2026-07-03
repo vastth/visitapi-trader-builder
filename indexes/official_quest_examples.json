@@ -1,0 +1,580 @@
+{
+  "source": [
+    "D:\\EFT 4\\MOD-CREAT\\VisitAPI-0.4\\visitapi-trader-builder-zh\\references\\extracts\\official-quests",
+    "D:\\EFT 4\\MOD-CREAT\\VisitAPI-0.4\\visitapi-trader-builder-zh\\references\\extracts\\official-rewards\\assortmentunlock-debut.json",
+    "D:\\EFT 4\\MOD-CREAT\\VisitAPI-0.4\\visitapi-trader-builder-zh\\indexes\\quest_condition_examples.json"
+  ],
+  "examples": {
+    "HandoverItem": {
+      "source": "D:/EFT 4/SPT/SPT_Data/database/templates/quests.json",
+      "questId": "5936d90786f7742b1420ba5b",
+      "questName": "Debut",
+      "location": "any",
+      "stage": "AvailableForFinish",
+      "condition": {
+        "conditionType": "HandoverItem",
+        "dogtagLevel": 0,
+        "dynamicLocale": false,
+        "globalQuestCounterId": "",
+        "id": "596737cb86f77463a8115efd",
+        "index": 3,
+        "isEncoded": false,
+        "maxDurability": 100,
+        "minDurability": 0,
+        "onlyFoundInRaid": false,
+        "parentId": "",
+        "target": [
+          "54491c4f4bdc2db1078b4568"
+        ],
+        "value": 2,
+        "visibilityConditions": []
+      }
+    },
+    "CounterCreator": {
+      "source": "D:/EFT 4/SPT/SPT_Data/database/templates/quests.json",
+      "questId": "5936d90786f7742b1420ba5b",
+      "questName": "Debut",
+      "location": "any",
+      "stage": "AvailableForFinish",
+      "condition": {
+        "completeInSeconds": 0,
+        "conditionType": "CounterCreator",
+        "counter": {
+          "conditions": [
+            {
+              "bodyPart": [],
+              "compareMethod": ">=",
+              "conditionType": "Kills",
+              "daytime": {
+                "from": 0,
+                "to": 0
+              },
+              "distance": {
+                "compareMethod": ">=",
+                "value": 0
+              },
+              "dynamicLocale": false,
+              "enemyEquipmentExclusive": [],
+              "enemyEquipmentInclusive": [],
+              "enemyHealthEffects": [],
+              "id": "5967379786f774620e763ea8",
+              "resetOnSessionEnd": false,
+              "savageRole": [],
+              "target": "Savage",
+              "value": 1,
+              "weapon": [],
+              "weaponCaliber": [],
+              "weaponModsExclusive": [],
+              "weaponModsInclusive": []
+            }
+          ],
+          "id": "5967379186f77463860dadd5"
+        },
+        "doNotResetIfCounterCompleted": false,
+        "dynamicLocale": false,
+        "globalQuestCounterId": "",
+        "id": "5967379186f77463860dadd6",
+        "index": 0,
+        "isNecessary": false,
+        "isResetOnConditionFailed": false,
+        "oneSessionOnly": false,
+        "parentId": "",
+        "type": "Elimination",
+        "value": 5,
+        "visibilityConditions": []
+      }
+    },
+    "VisitPlace": {
+      "source": "D:/EFT 4/SPT/SPT_Data/database/templates/quests.json",
+      "questId": "67f3ea78c54fde6cc2004855",
+      "questName": "Secret Benefactor",
+      "location": "any",
+      "stage": "AvailableForFinish",
+      "condition": {
+        "conditionType": "VisitPlace",
+        "dynamicLocale": false,
+        "globalQuestCounterId": "",
+        "id": "67ff74183ce253402679842a",
+        "index": 2,
+        "parentId": "67f45f2598742add16d22abf",
+        "target": "1",
+        "value": 1,
+        "visibilityConditions": []
+      }
+    },
+    "LeaveItemAtLocation": {
+      "source": "D:/EFT 4/SPT/SPT_Data/database/templates/quests.json",
+      "questId": "59674eb386f774539f14813a",
+      "questName": "Delivery From the Past",
+      "location": "any",
+      "stage": "AvailableForFinish",
+      "condition": {
+        "conditionType": "LeaveItemAtLocation",
+        "dogtagLevel": 0,
+        "dynamicLocale": false,
+        "globalQuestCounterId": "",
+        "id": "59674fe586f7744f4e358aa2",
+        "index": 1,
+        "isEncoded": false,
+        "maxDurability": 100,
+        "minDurability": 0,
+        "onlyFoundInRaid": false,
+        "parentId": "",
+        "plantTime": 10,
+        "target": [
+          "591092ef86f7747bb8703422"
+        ],
+        "value": 1,
+        "visibilityConditions": [],
+        "zoneId": "case_extraction"
+      }
+    },
+    "PlaceBeacon": {
+      "source": "D:/EFT 4/SPT/SPT_Data/database/templates/quests.json",
+      "questId": "597a0f5686f774273b74f676",
+      "questName": "Chemical - Part 4",
+      "location": "56f40101d2720b2a4d8b45d6",
+      "stage": "AvailableForFinish",
+      "condition": {
+        "conditionType": "PlaceBeacon",
+        "dynamicLocale": false,
+        "globalQuestCounterId": "",
+        "id": "59b242ea86f7741e6e0e7a86",
+        "index": 1,
+        "parentId": "",
+        "plantTime": 30,
+        "target": [
+          "5991b51486f77447b112d44f"
+        ],
+        "value": 1,
+        "visibilityConditions": [],
+        "zoneId": "gazel"
+      }
+    },
+    "ExitName": {
+      "source": "D:/EFT 4/SPT/SPT_Data/database/templates/quests.json",
+      "questId": "639136e84ed9512be67647db",
+      "questName": "Cease Fire",
+      "location": "5714dc692459777137212e12",
+      "stage": "AvailableForFinish",
+      "parentConditionType": "CounterCreator",
+      "counterCondition": {
+        "conditionType": "ExitName",
+        "dynamicLocale": false,
+        "exitName": "E9_sniper",
+        "id": "63929163c115f907b14700bb"
+      }
+    },
+    "RewardExamples": {
+      "Experience": {
+        "questId": "5936d90786f7742b1420ba5b",
+        "questName": "Debut",
+        "stage": "Success",
+        "reward": {
+          "availableInGameEditions": [],
+          "gameMode": [
+            "regular",
+            "pve"
+          ],
+          "id": "5fe305df8a67d12f5f24c8aa",
+          "isHidden": false,
+          "type": "Experience",
+          "unknown": false,
+          "value": 1700
+        }
+      },
+      "TraderStanding": {
+        "questId": "5936d90786f7742b1420ba5b",
+        "questName": "Debut",
+        "stage": "Success",
+        "reward": {
+          "availableInGameEditions": [],
+          "gameMode": [
+            "regular",
+            "pve"
+          ],
+          "id": "60c89c0c80b2027f403dd992",
+          "isHidden": false,
+          "target": "54cb50c76803fa8b248b4571",
+          "type": "TraderStanding",
+          "unknown": false,
+          "value": 0.02
+        }
+      },
+      "Item": {
+        "questId": "5936d90786f7742b1420ba5b",
+        "questName": "Debut",
+        "stage": "Success",
+        "reward": {
+          "availableInGameEditions": [],
+          "findInRaid": false,
+          "gameMode": [
+            "regular",
+            "pve"
+          ],
+          "id": "5fe305d9c646836c3b6fc562",
+          "isEncoded": false,
+          "isHidden": false,
+          "items": [
+            {
+              "_id": "68a9695194f6582e59140026",
+              "_tpl": "5449016a4bdc2d6f028b456f",
+              "upd": {
+                "StackObjectsCount": 15000
+              }
+            }
+          ],
+          "target": "68a9695194f6582e59140026",
+          "type": "Item",
+          "unknown": false,
+          "value": 15000
+        }
+      },
+      "AssortmentUnlock": {
+        "questId": "5936d90786f7742b1420ba5b",
+        "questName": "Debut",
+        "stage": "Success",
+        "reward": {
+          "availableInGameEditions": [],
+          "gameMode": [
+            "regular",
+            "pve"
+          ],
+          "id": "5ac64f3786f774056634a1cb",
+          "isHidden": false,
+          "items": [
+            {
+              "_id": "68a9695194f6582e59140030",
+              "_tpl": "5839a40f24597726f856b511",
+              "upd": {
+                "FireMode": {
+                  "FireMode": "single"
+                },
+                "Foldable": {
+                  "Folded": false
+                }
+              }
+            },
+            {
+              "_id": "68a9695194f6582e59140031",
+              "_tpl": "5649ad3f4bdc2df8348b4585",
+              "parentId": "68a9695194f6582e59140030",
+              "slotId": "mod_pistol_grip"
+            },
+            {
+              "_id": "68a9695194f6582e59140032",
+              "_tpl": "57dc347d245977596754e7a1",
+              "parentId": "68a9695194f6582e59140030",
+              "slotId": "mod_stock"
+            },
+            {
+              "_id": "68a9695194f6582e59140033",
+              "_tpl": "564ca99c4bdc2d16268b4589",
+              "parentId": "68a9695194f6582e59140030",
+              "slotId": "mod_magazine"
+            },
+            {
+              "_id": "68a9695194f6582e59140034",
+              "_tpl": "57ffb0e42459777d047111c5",
+              "parentId": "68a9695194f6582e59140030",
+              "slotId": "mod_muzzle"
+            },
+            {
+              "_id": "68a9695194f6582e59140035",
+              "_tpl": "5839a7742459773cf9693481",
+              "parentId": "68a9695194f6582e59140030",
+              "slotId": "mod_reciever"
+            },
+            {
+              "_id": "68a9695194f6582e59140036",
+              "_tpl": "59d36a0086f7747e673f3946",
+              "parentId": "68a9695194f6582e59140030",
+              "slotId": "mod_gas_block"
+            },
+            {
+              "_id": "68a9695194f6582e59140037",
+              "_tpl": "57dc32dc245977596d4ef3d3",
+              "parentId": "68a9695194f6582e59140036",
+              "slotId": "mod_handguard"
+            }
+          ],
+          "loyaltyLevel": 1,
+          "target": "68a9695194f6582e59140030",
+          "traderId": "54cb50c76803fa8b248b4571",
+          "type": "AssortmentUnlock",
+          "unknown": false
+        }
+      },
+      "CustomizationDirect": {
+        "questId": "59674cd986f7744ab26e32f2",
+        "questName": "Shootout Picnic",
+        "stage": "Success",
+        "reward": {
+          "availableInGameEditions": [],
+          "gameMode": [
+            "regular",
+            "pve"
+          ],
+          "id": "6764977cd6c9dfff4d9d185d",
+          "isHidden": false,
+          "target": "67585d6ab032beb9b5097e96",
+          "type": "CustomizationDirect",
+          "unknown": false
+        }
+      },
+      "ProductionScheme": {
+        "questId": "59c512ad86f7741f0d09de9b",
+        "questName": "The Punisher - Part 3",
+        "stage": "Success",
+        "reward": {
+          "availableInGameEditions": [],
+          "gameMode": [
+            "regular",
+            "pve"
+          ],
+          "id": "655b71861fe356507267b2f7",
+          "isHidden": false,
+          "items": [
+            {
+              "_id": "68a9695194f6582e591403e6",
+              "_tpl": "56dff2ced2720bb4668b4567",
+              "upd": {
+                "StackObjectsCount": 60
+              }
+            },
+            {
+              "_id": "68a9695194f6582e591403e7",
+              "_tpl": "56dff2ced2720bb4668b4567",
+              "upd": {
+                "StackObjectsCount": 60
+              }
+            },
+            {
+              "_id": "68a9695194f6582e591403e8",
+              "_tpl": "56dff2ced2720bb4668b4567",
+              "upd": {
+                "StackObjectsCount": 60
+              }
+            }
+          ],
+          "loyaltyLevel": 2,
+          "target": "68a9695194f6582e591403e8",
+          "traderId": 10,
+          "type": "ProductionScheme",
+          "unknown": false
+        }
+      },
+      "Skill": {
+        "questId": "5ac3464c86f7741d651d6877",
+        "questName": "Farming - Part 4",
+        "stage": "Success",
+        "reward": {
+          "availableInGameEditions": [],
+          "gameMode": [
+            "regular",
+            "pve"
+          ],
+          "id": "629f0a7650f43060015c5382",
+          "isHidden": false,
+          "target": "Attention",
+          "type": "Skill",
+          "unknown": false,
+          "value": 300
+        }
+      },
+      "Achievement": {
+        "questId": "5c51aac186f77432ea65c552",
+        "questName": "Collector",
+        "stage": "Success",
+        "reward": {
+          "availableInGameEditions": [],
+          "gameMode": [
+            "regular",
+            "pve"
+          ],
+          "id": "664f249468508d74604bf55f",
+          "isHidden": false,
+          "target": "664f1f8768508d74604bf556",
+          "type": "Achievement",
+          "unknown": false
+        }
+      },
+      "TraderUnlock": {
+        "questId": "5d2495a886f77425cd51e403",
+        "questName": "Introduction",
+        "stage": "Success",
+        "reward": {
+          "availableInGameEditions": [],
+          "gameMode": [
+            "regular",
+            "pve"
+          ],
+          "id": "5d78c49786f7745041358b58",
+          "isHidden": false,
+          "target": "5c0647fdd443bc2504c2d371",
+          "type": "TraderUnlock",
+          "unknown": false
+        }
+      },
+      "NotificationPopup": {
+        "questId": "5d2495a886f77425cd51e403",
+        "questName": "Introduction",
+        "stage": "Success",
+        "reward": {
+          "availableInGameEditions": [],
+          "gameMode": [
+            "regular",
+            "pve"
+          ],
+          "id": "67f1ade6868c8b57f85781a9",
+          "illustrationConfig": {
+            "bigImage": "/files/rewards/info_popup/67f1b1352f81cad6aa0a980e.jpg",
+            "image": "",
+            "isBigImage": false
+          },
+          "isHidden": false,
+          "message": "67f1adea657637a74150c2ea",
+          "type": "NotificationPopup",
+          "unknown": false
+        }
+      },
+      "TraderStandingRestore": {
+        "questId": "6391d90f4ed9512be67647df",
+        "questName": "Make Amends",
+        "stage": "Success",
+        "reward": {
+          "availableInGameEditions": [],
+          "gameMode": [
+            "regular",
+            "pve"
+          ],
+          "id": "63ab69fbe842787ad2135718",
+          "isHidden": false,
+          "target": "638f541a29ffd1183d187f57",
+          "type": "TraderStandingRestore",
+          "unknown": false,
+          "value": 0
+        }
+      },
+      "Pockets": {
+        "questId": "666314a50aa5c7436c00908a",
+        "questName": "Old Patterns",
+        "stage": "Success",
+        "reward": {
+          "availableInGameEditions": [
+            "left_behind",
+            "prepare_for_escape",
+            "press_edition",
+            "standard",
+            "edge_of_darkness"
+          ],
+          "gameMode": [
+            "regular",
+            "pve"
+          ],
+          "id": "6682724b2388eb5c9e059d62",
+          "isHidden": false,
+          "target": "65e080be269cbd5c5005e529",
+          "type": "Pockets",
+          "unknown": false
+        }
+      },
+      "WebPromoCode": {
+        "questId": "68341846186efa3c5b07f989",
+        "questName": "Balancing - Part 1 PVE ZONE",
+        "stage": "Success",
+        "reward": {
+          "availableInGameEditions": [],
+          "gameMode": [
+            "regular",
+            "pve"
+          ],
+          "id": "68341846186efa3c5b07f996",
+          "illustrationConfig": {
+            "bigImage": "",
+            "image": "",
+            "isBigImage": false
+          },
+          "isHidden": false,
+          "type": "WebPromoCode",
+          "unknown": false
+        }
+      }
+    },
+    "AssortmentUnlock": {
+      "source": "D:/EFT 4/SPT/SPT_Data/database/templates/quests.json",
+      "questId": "5936d90786f7742b1420ba5b",
+      "questName": "Debut",
+      "reward": {
+        "availableInGameEditions": [],
+        "gameMode": [
+          "regular",
+          "pve"
+        ],
+        "id": "5ac64f3786f774056634a1cb",
+        "isHidden": false,
+        "items": [
+          {
+            "_id": "68a9695194f6582e59140030",
+            "_tpl": "5839a40f24597726f856b511",
+            "upd": {
+              "FireMode": {
+                "FireMode": "single"
+              },
+              "Foldable": {
+                "Folded": false
+              }
+            }
+          },
+          {
+            "_id": "68a9695194f6582e59140031",
+            "_tpl": "5649ad3f4bdc2df8348b4585",
+            "parentId": "68a9695194f6582e59140030",
+            "slotId": "mod_pistol_grip"
+          },
+          {
+            "_id": "68a9695194f6582e59140032",
+            "_tpl": "57dc347d245977596754e7a1",
+            "parentId": "68a9695194f6582e59140030",
+            "slotId": "mod_stock"
+          },
+          {
+            "_id": "68a9695194f6582e59140033",
+            "_tpl": "564ca99c4bdc2d16268b4589",
+            "parentId": "68a9695194f6582e59140030",
+            "slotId": "mod_magazine"
+          },
+          {
+            "_id": "68a9695194f6582e59140034",
+            "_tpl": "57ffb0e42459777d047111c5",
+            "parentId": "68a9695194f6582e59140030",
+            "slotId": "mod_muzzle"
+          },
+          {
+            "_id": "68a9695194f6582e59140035",
+            "_tpl": "5839a7742459773cf9693481",
+            "parentId": "68a9695194f6582e59140030",
+            "slotId": "mod_reciever"
+          },
+          {
+            "_id": "68a9695194f6582e59140036",
+            "_tpl": "59d36a0086f7747e673f3946",
+            "parentId": "68a9695194f6582e59140030",
+            "slotId": "mod_gas_block"
+          },
+          {
+            "_id": "68a9695194f6582e59140037",
+            "_tpl": "57dc32dc245977596d4ef3d3",
+            "parentId": "68a9695194f6582e59140036",
+            "slotId": "mod_handguard"
+          }
+        ],
+        "loyaltyLevel": 1,
+        "target": "68a9695194f6582e59140030",
+        "traderId": "54cb50c76803fa8b248b4571",
+        "type": "AssortmentUnlock",
+        "unknown": false
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "69f1ce000000000000000001 name": "任务标题",
+  "69f1ce000000000000000001 description": "任务描述。",
+  "69f1ce000000000000000001 note": "",
+  "69f1ce000000000000000001 startedMessageText": "接任务时的商人消息。",
+  "69f1ce000000000000000001 successMessageText": "完成任务后的商人消息。",
+  "69f1ce000000000000000001 failMessageText": "失败消息。",
+  "69f1ce000000000000000001 acceptPlayerMessage": "玩家接受任务时的消息。",
+  "69f1ce000000000000000001 declinePlayerMessage": "玩家拒绝任务时的消息。",
+  "69f1ce000000000000000001 completePlayerMessage": "玩家提交任务时的消息。",
+  "69f1ce000000000000000001 changeQuestMessageText": "任务进行中的商人提醒。",
+  "69f1ce000000000000000010": "上交条件文本"
+}

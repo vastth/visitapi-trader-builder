@@ -1,0 +1,4 @@
+interface:
+  display_name: "VisitAPI 商人与任务构建"
+  short_description: "按 Quest.cs 严格构建 VisitAPI 商人、任务与对话。"
+  default_prompt: "Use $visitapi-trader-builder-zh to plan a VisitAPI trader, read the authority references first, validate quest JSON against Quest.cs and Reward.cs, then generate dialogue and server files."

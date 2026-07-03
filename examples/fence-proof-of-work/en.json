@@ -1,0 +1,13 @@
+{
+  "69f1ce000000000000000001 name": "Proof of Work",
+  "69f1ce000000000000000001 description": "Fence wants a small proof before he wastes more words on you. Bring him one PMC dogtag. Any side. If the tag is real, maybe you are too.",
+  "69f1ce000000000000000001 note": "",
+  "69f1ce000000000000000001 startedMessageText": "One tag. That's all. USEC, BEAR, I don't care. Bring me proof you can put another contractor in the ground and come back with something to show for it.",
+  "69f1ce000000000000000001 successMessageText": "Good. Fresh enough. You did the work and you came back in one piece. Here's your cut. Don't confuse a first payment with trust.",
+  "69f1ce000000000000000001 failMessageText": "Then we're done talking.",
+  "69f1ce000000000000000001 acceptPlayerMessage": "I'll bring you a tag.",
+  "69f1ce000000000000000001 declinePlayerMessage": "Not now.",
+  "69f1ce000000000000000001 completePlayerMessage": "Here's the dogtag.",
+  "69f1ce000000000000000001 changeQuestMessageText": "Still waiting on that tag. One is enough. No excuses.",
+  "69f1ce000000000000000010": "Hand over one PMC dogtag"
+}

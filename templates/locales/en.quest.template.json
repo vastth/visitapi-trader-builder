@@ -1,0 +1,13 @@
+{
+  "69f1ce000000000000000001 name": "Quest Title",
+  "69f1ce000000000000000001 description": "Quest description.",
+  "69f1ce000000000000000001 note": "",
+  "69f1ce000000000000000001 startedMessageText": "Trader message on acceptance.",
+  "69f1ce000000000000000001 successMessageText": "Trader message on completion.",
+  "69f1ce000000000000000001 failMessageText": "Failure message.",
+  "69f1ce000000000000000001 acceptPlayerMessage": "Player acceptance message.",
+  "69f1ce000000000000000001 declinePlayerMessage": "Player decline message.",
+  "69f1ce000000000000000001 completePlayerMessage": "Player completion message.",
+  "69f1ce000000000000000001 changeQuestMessageText": "Trader reminder while active.",
+  "69f1ce000000000000000010": "Handover condition text"
+}

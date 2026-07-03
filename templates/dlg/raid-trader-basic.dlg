@@ -1,0 +1,19 @@
+# Rename this file to the trader id before use.
+
+trader: 579dc571d53a0658a154fbec "Fence"
+start: root
+quest sample = 69f1ce000000000000000001
+trigger: raid bigmap (310.1499, -1.9962151, -175.2366) dist 3 radius 1.2 repeat "Talk to Fence"
+
+<root> bg: FenceBackGround.png
+State your business. / 说重点。
+- I want work. / 我来接活。 -> task
+- Show me your tasks. / 给我看看你的任务。 -> @tasks
+- I'm leaving. / 我走了。 -> @close
+
+<task> bg: FenceBackGround.png
+One task. One proof. Bring it back. / 一件事。一份证明。带回来。
+- I'll take it. / 我接。 -> root | accept: sample
+- Here's what you asked for. / 你要的东西在这。 -> root | handover: sample
+- Pay me. / 付钱。 -> root | complete: sample
+- Not now. / 现在不谈。 -> @close

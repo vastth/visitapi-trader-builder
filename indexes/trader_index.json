@@ -1,0 +1,49 @@
+{
+  "source": "D:\\EFT 4\\MOD-CREAT\\VisitAPI-0.4\\visitapi-trader-builder-zh\\references\\extracts\\traders",
+  "traders": {
+    "579dc571d53a0658a154fbec": {
+      "source_base": "D:/EFT 4/SPT/SPT_Data/database/traders/579dc571d53a0658a154fbec/base.json",
+      "source_assort": "D:/EFT 4/SPT/SPT_Data/database/traders/579dc571d53a0658a154fbec/assort.json",
+      "source_questassort": "D:/EFT 4/SPT/SPT_Data/database/traders/579dc571d53a0658a154fbec/questassort.json",
+      "base": {
+        "_id": "579dc571d53a0658a154fbec",
+        "nickname": "Fence",
+        "name": "<Настоящее имя неизвестно>",
+        "surname": "Fence",
+        "location": "unknown",
+        "avatar": "/files/trader/avatar/579dc571d53a0658a154fbec.jpg",
+        "currency": "RUB"
+      },
+      "counts": {
+        "assort_items": 0,
+        "barter_scheme": 0,
+        "loyal_level_items": 0,
+        "questassort_started": 0,
+        "questassort_success": 0,
+        "questassort_fail": 0
+      }
+    },
+    "54cb50c76803fa8b248b4571": {
+      "source_base": "D:/EFT 4/SPT/SPT_Data/database/traders/54cb50c76803fa8b248b4571/base.json",
+      "source_assort": "D:/EFT 4/SPT/SPT_Data/database/traders/54cb50c76803fa8b248b4571/assort.json",
+      "source_questassort": "D:/EFT 4/SPT/SPT_Data/database/traders/54cb50c76803fa8b248b4571/questassort.json",
+      "base": {
+        "_id": "54cb50c76803fa8b248b4571",
+        "nickname": "Prapor",
+        "name": "Павел Егорович",
+        "surname": "Романенко",
+        "location": "",
+        "avatar": "/files/trader/avatar/59b91ca086f77469a81232e4.jpg",
+        "currency": "RUB"
+      },
+      "counts": {
+        "assort_items": 951,
+        "barter_scheme": 420,
+        "loyal_level_items": 422,
+        "questassort_started": 1,
+        "questassort_success": 35,
+        "questassort_fail": 0
+      }
+    }
+  }
+}
