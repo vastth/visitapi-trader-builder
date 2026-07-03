@@ -189,50 +189,21 @@ if (-not $mutex.WaitOne(0, $false)) {
 Write-Log "watcher started for $RepoRoot"
 Write-Status "watcher started for $RepoRoot"
 
-$watcher = New-Object System.IO.FileSystemWatcher
-$watcher.Path = $RepoRoot
-$watcher.Filter = "*"
-$watcher.IncludeSubdirectories = $true
-$watcher.NotifyFilter = [System.IO.NotifyFilters]'FileName, DirectoryName, LastWrite, CreationTime, Size'
-$watcher.EnableRaisingEvents = $true
-
-$subscriptions = @(
-    (Register-ObjectEvent -InputObject $watcher -EventName Changed),
-    (Register-ObjectEvent -InputObject $watcher -EventName Created),
-    (Register-ObjectEvent -InputObject $watcher -EventName Deleted),
-    (Register-ObjectEvent -InputObject $watcher -EventName Renamed)
-)
-
 try {
+    Write-Status "polling for working tree changes every $DebounceSeconds seconds"
     while ($true) {
-        $event = Wait-Event -Timeout 1
-        if ($event) {
-            try {
-                $path = $event.SourceEventArgs.FullPath
-                if (-not (Test-IgnoredPath $path)) {
-                    $reason = "{0}: {1}" -f $event.SourceEventArgs.ChangeType, $path
-                    Queue-Change -Reason $reason
-                }
-            }
-            finally {
-                Remove-Event -EventIdentifier $event.EventIdentifier -ErrorAction SilentlyContinue
-            }
-        }
-
-        if (Test-PendingSyncReady) {
+        $status = Get-TrackedChanges
+        if ($status) {
+            Queue-Change -Reason "working tree changes"
             Invoke-CommitAndPush -Reason $script:PendingReason
             $script:PendingReason = ""
             $script:LastEventAt = [datetime]::MinValue
         }
+
+        Start-Sleep -Seconds $DebounceSeconds
     }
 }
 finally {
-    foreach ($subscription in $subscriptions) {
-        Unregister-Event -SubscriptionId $subscription.Id -ErrorAction SilentlyContinue
-        Remove-Job -Id $subscription.Id -Force -ErrorAction SilentlyContinue
-    }
-    $watcher.EnableRaisingEvents = $false
-    $watcher.Dispose()
     $mutex.ReleaseMutex() | Out-Null
     $mutex.Dispose()
     Write-Log "watcher stopped"
