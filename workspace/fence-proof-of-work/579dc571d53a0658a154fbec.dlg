@@ -5,11 +5,13 @@
 trader: 579dc571d53a0658a154fbec "Fence"
 start: root
 quest proof = 69f1ce000000000000000001
+quest alive_price = 69f1ce000000000000000002
 trigger: raid bigmap (310.1499, -1.9962151, -175.2366) dist 3 radius 1.2 repeat "Talk to Fence"
 
 <root> bg: FenceBackGround.png
 You made it this far. That still tells me nothing. / 你能走到这里，还说明不了什么。
 - You said you had work. / 你说过有活。 -> proof
+- You said I still owed you. / 你说过我还欠你。 -> alive_price
 # Shared root: @tasks is only meaningful when this dialogue is opened from the out-of-raid Talk button.
 - Show me your tasks. / 给我看看你的任务。 -> @tasks
 - I'm leaving. / 我走了。 -> @close
@@ -19,6 +21,14 @@ One tag. One dead PMC. Any side. Bring it back, and maybe I remember your face. 
 - Fine. I'll bring you one. / 行，我去带一枚回来。 -> root | accept: proof
 - Here's your tag. / 狗牌带来了。 -> root | handover: proof
 - That's your proof. Pay up. / 证明给你了，付钱。 -> root | complete: proof
+# Only useful out of raid. In raid this option no-ops by VisitAPI design.
+- Show me your tasks. / 给我看看你的任务。 -> @tasks
+- Not now. / 现在不谈。 -> @close
+
+<alive_price> bg: FenceBackGround.png
+One tag only tells me you saw a dead man. It does not tell me you can still walk a road alone. Go back to Customs. Clear some noise. Come back breathing. / 一枚狗牌，只能说明你见过死人。不能说明你还能一个人走完一条路。回海关，清掉些噪音。活着回来。
+- I'll clear the road. / 我会把路清出来。 -> root | accept: alive_price
+- The road is clear. / 路清了。 -> root | complete: alive_price
 # Only useful out of raid. In raid this option no-ops by VisitAPI design.
 - Show me your tasks. / 给我看看你的任务。 -> @tasks
 - Not now. / 现在不谈。 -> @close

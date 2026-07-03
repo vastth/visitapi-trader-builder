@@ -16,12 +16,27 @@
 powershell -ExecutionPolicy Bypass -File .\tools\autosync\install-autosync-task.ps1
 ```
 
-安装后，任务计划会在用户登录时自动启动监听器。
+安装后，任务计划会在用户登录时自动启动监听器。这个方式默认隐藏窗口运行，不适合看实时反馈。
 
 ## 立即启动
 
 ```powershell
 Start-ScheduledTask -TaskName 'visitapi-trader-builde-autosync'
+```
+
+如果你需要在一个可见终端里确认监听已经启动，请直接前台运行监听脚本：
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File .\tools\autosync\watch-git-sync.ps1
+```
+
+启动后终端会先显示 `watcher started for ...`，后续每次检测到变更、提交、推送或错误，也会继续输出状态。
+
+如果你只是想确认当前有没有在跑，可以查看任务状态和日志：
+
+```powershell
+Get-ScheduledTask -TaskName 'visitapi-trader-builde-autosync'
+Get-Content .\.autosync\watcher.log -Tail 20
 ```
 
 ## 卸载

@@ -77,5 +77,188 @@
     "templateId": "69f1ce000000000000000001",
     "traderId": "579dc571d53a0658a154fbec",
     "type": "Completion"
+  },
+  "69f1ce000000000000000002": {
+    "QuestName": "Price of a Living Man",
+    "_id": "69f1ce000000000000000002",
+    "acceptPlayerMessage": "69f1ce000000000000000002 acceptPlayerMessage",
+    "acceptanceAndFinishingSource": "eft",
+    "arenaLocations": [],
+    "canShowNotificationsInGame": true,
+    "changeQuestMessageText": "69f1ce000000000000000002 changeQuestMessageText",
+    "completePlayerMessage": "69f1ce000000000000000002 completePlayerMessage",
+    "conditions": {
+      "AvailableForFinish": [
+        {
+          "completeInSeconds": 0,
+          "conditionType": "CounterCreator",
+          "counter": {
+            "conditions": [
+              {
+                "bodyPart": [],
+                "compareMethod": ">=",
+                "conditionType": "Kills",
+                "daytime": {
+                  "from": 0,
+                  "to": 0
+                },
+                "distance": {
+                  "compareMethod": ">=",
+                  "value": 0
+                },
+                "dynamicLocale": false,
+                "enemyEquipmentExclusive": [],
+                "enemyEquipmentInclusive": [],
+                "enemyHealthEffects": [],
+                "id": "69f1ce000000000000000023",
+                "resetOnSessionEnd": false,
+                "savageRole": [],
+                "target": "Savage",
+                "value": 1,
+                "weapon": [],
+                "weaponCaliber": [],
+                "weaponModsExclusive": [],
+                "weaponModsInclusive": []
+              },
+              {
+                "conditionType": "Location",
+                "dynamicLocale": false,
+                "id": "69f1ce000000000000000024",
+                "target": [
+                  "bigmap"
+                ]
+              }
+            ],
+            "id": "69f1ce000000000000000022"
+          },
+          "doNotResetIfCounterCompleted": false,
+          "dynamicLocale": false,
+          "globalQuestCounterId": "",
+          "id": "69f1ce000000000000000021",
+          "index": 0,
+          "isNecessary": false,
+          "isResetOnConditionFailed": false,
+          "oneSessionOnly": false,
+          "parentId": "",
+          "type": "Elimination",
+          "value": 5,
+          "visibilityConditions": []
+        },
+        {
+          "completeInSeconds": 0,
+          "conditionType": "CounterCreator",
+          "counter": {
+            "conditions": [
+              {
+                "conditionType": "Location",
+                "dynamicLocale": false,
+                "id": "69f1ce000000000000000027",
+                "target": [
+                  "bigmap"
+                ]
+              },
+              {
+                "conditionType": "ExitStatus",
+                "dynamicLocale": false,
+                "id": "69f1ce000000000000000028",
+                "status": [
+                  "Survived",
+                  "Runner",
+                  "Transit"
+                ]
+              }
+            ],
+            "id": "69f1ce000000000000000026"
+          },
+          "doNotResetIfCounterCompleted": false,
+          "dynamicLocale": false,
+          "globalQuestCounterId": "",
+          "id": "69f1ce000000000000000025",
+          "index": 1,
+          "isNecessary": false,
+          "isResetOnConditionFailed": false,
+          "oneSessionOnly": true,
+          "parentId": "",
+          "type": "Completion",
+          "value": 1,
+          "visibilityConditions": [
+            {
+              "conditionType": "CompleteCondition",
+              "id": "69f1ce00000000000000002b",
+              "target": "69f1ce000000000000000021"
+            }
+          ]
+        }
+      ],
+      "AvailableForStart": [
+        {
+          "availableAfter": 0,
+          "conditionType": "Quest",
+          "dispersion": 0,
+          "dynamicLocale": false,
+          "globalQuestCounterId": "",
+          "id": "69f1ce000000000000000020",
+          "index": 0,
+          "parentId": "",
+          "status": [
+            4
+          ],
+          "target": "69f1ce000000000000000001",
+          "visibilityConditions": []
+        }
+      ],
+      "Fail": []
+    },
+    "declinePlayerMessage": "69f1ce000000000000000002 declinePlayerMessage",
+    "description": "69f1ce000000000000000002 description",
+    "failMessageText": "69f1ce000000000000000002 failMessageText",
+    "gameModes": [],
+    "image": "/files/quest/icon/fence-proof-of-work.png",
+    "instantComplete": false,
+    "isKey": false,
+    "location": "any",
+    "name": "69f1ce000000000000000002 name",
+    "note": "69f1ce000000000000000002 note",
+    "progressSource": "eft",
+    "rankingModes": [],
+    "restartable": false,
+    "rewards": {
+      "Fail": [],
+      "Started": [],
+      "Success": [
+        {
+          "availableInGameEditions": [],
+          "findInRaid": false,
+          "gameMode": [
+            "regular",
+            "pve"
+          ],
+          "id": "69f1ce000000000000000029",
+          "isEncoded": false,
+          "isHidden": false,
+          "items": [
+            {
+              "_id": "69f1ce00000000000000002a",
+              "_tpl": "5449016a4bdc2d6f028b456f",
+              "upd": {
+                "StackObjectsCount": 15000
+              }
+            }
+          ],
+          "target": "69f1ce00000000000000002a",
+          "type": "Item",
+          "unknown": false,
+          "value": 15000
+        }
+      ]
+    },
+    "secretQuest": false,
+    "side": "Pmc",
+    "startedMessageText": "69f1ce000000000000000002 startedMessageText",
+    "status": 0,
+    "successMessageText": "69f1ce000000000000000002 successMessageText",
+    "templateId": "69f1ce000000000000000002",
+    "traderId": "579dc571d53a0658a154fbec",
+    "type": "Elimination"
   }
 }

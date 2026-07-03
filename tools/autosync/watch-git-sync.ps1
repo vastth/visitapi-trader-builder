@@ -21,9 +21,13 @@ function Write-Log {
     Add-Content -LiteralPath $LogPath -Value "[$timestamp] $Message" -Encoding UTF8
 }
 
+function Write-Status {
+    param([string]$Message)
+    Write-Host "[autosync] $Message"
+}
+
 function Invoke-Git {
     param(
-        [Parameter(ValueFromRemainingArguments = $true)]
         [string[]]$Arguments
     )
 
@@ -36,7 +40,7 @@ function Invoke-Git {
 }
 
 function Get-TrackedChanges {
-    $result = Invoke-Git status --porcelain --untracked-files=all
+    $result = Invoke-Git -Arguments @('status', '--porcelain', '--untracked-files=all')
     if ($result.ExitCode -ne 0) {
         throw "git status failed: $($result.Output)"
     }
@@ -44,7 +48,7 @@ function Get-TrackedChanges {
 }
 
 function Get-RemoteName {
-    $result = Invoke-Git remote
+    $result = Invoke-Git -Arguments @('remote')
     if ($result.ExitCode -ne 0) {
         throw "git remote failed: $($result.Output)"
     }
@@ -56,11 +60,32 @@ function Get-RemoteName {
 }
 
 function Get-BranchName {
-    $result = Invoke-Git branch --show-current
+    $result = Invoke-Git -Arguments @('branch', '--show-current')
     if ($result.ExitCode -ne 0) {
         throw "git branch failed: $($result.Output)"
     }
     return $result.Output.Trim()
+}
+
+function Queue-Change {
+    param([string]$Reason)
+
+    $script:PendingReason = $Reason
+    $script:LastEventAt = Get-Date
+    Write-Status "change detected: $Reason"
+}
+
+function Test-PendingSyncReady {
+    if ($script:SyncInProgress) {
+        return $false
+    }
+
+    if ($script:LastEventAt -eq [datetime]::MinValue) {
+        return $false
+    }
+
+    $age = (Get-Date) - $script:LastEventAt
+    return $age.TotalSeconds -ge $DebounceSeconds
 }
 
 function Invoke-CommitAndPush {
@@ -80,8 +105,9 @@ function Invoke-CommitAndPush {
         }
 
         Write-Log "change detected: $Reason"
+        Write-Status "change detected: $Reason"
 
-        $add = Invoke-Git add -A
+        $add = Invoke-Git -Arguments @('add', '-A')
         if ($add.ExitCode -ne 0) {
             throw "git add failed: $($add.Output)"
         }
@@ -92,7 +118,7 @@ function Invoke-CommitAndPush {
         }
 
         $commitMessage = "auto-sync: $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')"
-        $commit = Invoke-Git commit -m $commitMessage --no-verify
+        $commit = Invoke-Git -Arguments @('commit', '-m', $commitMessage, '--no-verify')
         if ($commit.ExitCode -ne 0) {
             if ($commit.Output -match "nothing to commit") {
                 return
@@ -101,10 +127,12 @@ function Invoke-CommitAndPush {
         }
 
         Write-Log "commit created: $commitMessage"
+        Write-Status "commit created: $commitMessage"
 
         $remoteName = Get-RemoteName
         if (-not $remoteName) {
             Write-Log "no remote configured; local auto-commit only"
+            Write-Status "no remote configured; local auto-commit only"
             return
         }
 
@@ -113,15 +141,17 @@ function Invoke-CommitAndPush {
             throw "branch name is empty"
         }
 
-        $push = Invoke-Git push -u $remoteName $branchName
+        $push = Invoke-Git -Arguments @('push', '-u', $remoteName, $branchName)
         if ($push.ExitCode -ne 0) {
             throw "git push failed: $($push.Output)"
         }
 
         Write-Log "push completed: $remoteName/$branchName"
+        Write-Status "push completed: $remoteName/$branchName"
     }
     catch {
         Write-Log "sync error: $($_.Exception.Message)"
+        Write-Status "sync error: $($_.Exception.Message)"
     }
     finally {
         $script:SyncInProgress = $false
@@ -152,10 +182,12 @@ $mutexName = "visitapi-autosync-" + ([BitConverter]::ToString(
 $mutex = New-Object System.Threading.Mutex($false, $mutexName)
 if (-not $mutex.WaitOne(0, $false)) {
     Write-Log "watcher already running for $RepoRoot"
+    Write-Status "watcher already running for $RepoRoot"
     exit 0
 }
 
 Write-Log "watcher started for $RepoRoot"
+Write-Status "watcher started for $RepoRoot"
 
 $watcher = New-Object System.IO.FileSystemWatcher
 $watcher.Path = $RepoRoot
@@ -164,43 +196,34 @@ $watcher.IncludeSubdirectories = $true
 $watcher.NotifyFilter = [System.IO.NotifyFilters]'FileName, DirectoryName, LastWrite, CreationTime, Size'
 $watcher.EnableRaisingEvents = $true
 
-$timer = New-Object System.Timers.Timer
-$timer.Interval = $DebounceSeconds * 1000
-$timer.AutoReset = $false
-
-$enqueueAction = {
-    $path = $Event.SourceEventArgs.FullPath
-    if (Test-IgnoredPath $path) {
-        return
-    }
-    $script:PendingReason = "{0}: {1}" -f $Event.SourceEventArgs.ChangeType, $path
-    $script:LastEventAt = Get-Date
-    $timer.Stop()
-    $timer.Start()
-}
-
-$timerAction = {
-    if ($script:SyncInProgress) {
-        return
-    }
-    $age = (Get-Date) - $script:LastEventAt
-    if ($age.TotalSeconds -lt $DebounceSeconds) {
-        return
-    }
-    Invoke-CommitAndPush -Reason $script:PendingReason
-}
-
 $subscriptions = @(
-    (Register-ObjectEvent -InputObject $watcher -EventName Changed -Action $enqueueAction),
-    (Register-ObjectEvent -InputObject $watcher -EventName Created -Action $enqueueAction),
-    (Register-ObjectEvent -InputObject $watcher -EventName Deleted -Action $enqueueAction),
-    (Register-ObjectEvent -InputObject $watcher -EventName Renamed -Action $enqueueAction),
-    (Register-ObjectEvent -InputObject $timer -EventName Elapsed -Action $timerAction)
+    (Register-ObjectEvent -InputObject $watcher -EventName Changed),
+    (Register-ObjectEvent -InputObject $watcher -EventName Created),
+    (Register-ObjectEvent -InputObject $watcher -EventName Deleted),
+    (Register-ObjectEvent -InputObject $watcher -EventName Renamed)
 )
 
 try {
     while ($true) {
-        Wait-Event -Timeout 5 | Out-Null
+        $event = Wait-Event -Timeout 1
+        if ($event) {
+            try {
+                $path = $event.SourceEventArgs.FullPath
+                if (-not (Test-IgnoredPath $path)) {
+                    $reason = "{0}: {1}" -f $event.SourceEventArgs.ChangeType, $path
+                    Queue-Change -Reason $reason
+                }
+            }
+            finally {
+                Remove-Event -EventIdentifier $event.EventIdentifier -ErrorAction SilentlyContinue
+            }
+        }
+
+        if (Test-PendingSyncReady) {
+            Invoke-CommitAndPush -Reason $script:PendingReason
+            $script:PendingReason = ""
+            $script:LastEventAt = [datetime]::MinValue
+        }
     }
 }
 finally {
@@ -210,10 +233,9 @@ finally {
     }
     $watcher.EnableRaisingEvents = $false
     $watcher.Dispose()
-    $timer.Stop()
-    $timer.Dispose()
     $mutex.ReleaseMutex() | Out-Null
     $mutex.Dispose()
     Write-Log "watcher stopped"
+    Write-Status "watcher stopped"
 }
 

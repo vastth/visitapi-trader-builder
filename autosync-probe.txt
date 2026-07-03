@@ -1,0 +1,4 @@
+autosync probe 2026-07-04
+triggered after restart
+triggered in foreground listener
+final trigger for push verification
