@@ -1,6 +1,7 @@
-# Fence VisitAPI minimal raid-task example
+# Fence VisitAPI dialogue - cinematic text lens version
 # In raid: use accept/handover/complete.
 # Out of raid: Talk can jump to @tasks.
+# DLG is treated as a text camera: scene, object, pause, NPC intent, player choice.
 
 trader: 579dc571d53a0658a154fbec "Fence"
 start: root
@@ -9,7 +10,15 @@ quest alive_price = 69f1ce000000000000000002
 trigger: raid bigmap (310.1499, -1.9962151, -175.2366) dist 3 radius 1.2 repeat "Talk to Fence"
 
 <root> bg: FenceBackGround.png
-You made it this far. That still tells me nothing. / 你能走到这里，还说明不了什么。
+The room behind the black channel is quiet. Too quiet. Something metal moves once on wood. / 黑色频道后面的房间很安静。安静得过分。有什么金属物在木桌上轻轻动了一下。
+
+Fence does not greet you. / Fence 没有问候你。
+
+"You came." / “你来了。”
+
+A pause. / 停顿。
+
+"That still tells me nothing." / “这还说明不了什么。”
 - You said you had work. / 你说过有活。 -> proof
 - You said I still owed you. / 你说过我还欠你。 -> alive_price
 # Shared root: @tasks is only meaningful when this dialogue is opened from the out-of-raid Talk button.
@@ -17,7 +26,18 @@ You made it this far. That still tells me nothing. / 你能走到这里，还说
 - I'm leaving. / 我走了。 -> @close
 
 <proof> bg: FenceBackGround.png
-One tag. One dead PMC. Any side. Bring it back, and maybe I remember your face. / 一枚狗牌。一个死掉的 PMC。哪边的都行。带回来，也许我会记住你这张脸。
+A strip of cloth lies on the table, folded once. No insignia. No blood you can see. / 桌上放着一条折过一次的布条。没有标记。也看不见血。
+
+Fence keeps one finger on it, as if the thing might crawl away. / Fence 用一根手指压着它，像是怕那东西自己爬走。
+
+"A tag." / “一枚狗牌。”
+
+He does not say USEC. He does not say BEAR. / 他没有说 USEC。也没有说 BEAR。
+
+"Metal remembers better than men." / “金属比人记得牢。”
+- Why a dogtag? / 为什么是狗牌？ -> proof_question
+- You are buying names. / 你在买名字。 -> proof_names
+- [USEC] You knew what I was before I woke up. / [USEC] 我醒来之前，你就知道我是什么人。 -> proof_usec
 - Fine. I'll bring you one. / 行，我去带一枚回来。 -> root | accept: proof
 - Here's your tag. / 狗牌带来了。 -> root | handover: proof
 - That's your proof. Pay up. / 证明给你了，付钱。 -> root | complete: proof
@@ -25,10 +45,127 @@ One tag. One dead PMC. Any side. Bring it back, and maybe I remember your face. 
 - Show me your tasks. / 给我看看你的任务。 -> @tasks
 - Not now. / 现在不谈。 -> @close
 
+<proof_question> bg: FenceBackGround.png
+Fence turns the cloth over. There is nothing on the other side. / Fence 把那条布翻了一面。另一面什么都没有。
+
+"Because a mouth lies." / “因为嘴会撒谎。”
+
+He taps the table once. / 他敲了一下桌面。
+
+"A tag only says someone stopped moving." / “狗牌只说明有人停下了。”
+
+Another pause. / 又一次停顿。
+
+"Bring me one. Then we talk about what you are." / “带一枚回来。然后再谈你算什么。”
+- Fine. I'll bring you one. / 行，我去带一枚回来。 -> root | accept: proof
+- You are buying names. / 你在买名字。 -> proof_names
+- Not now. / 现在不谈。 -> @close
+
+<proof_names> bg: FenceBackGround.png
+Fence almost smiles. Almost. / Fence 像是笑了一下。也只是像。
+
+"Names are cheap." / “名字很便宜。”
+
+He slides an empty casing toward you. / 他把一枚空弹壳推到你面前。
+
+"What I buy is the silence after them." / “我买的是名字后面的安静。”
+- What does that mean? / 这是什么意思？ -> proof_cutoff
+- Fine. I'll bring you one. / 行，我去带一枚回来。 -> root | accept: proof
+- Not now. / 现在不谈。 -> @close
+
+<proof_usec> bg: FenceBackGround.png
+The room loses a little air. / 房间里的空气像是少了一点。
+
+Fence's hand stops on the cloth. / Fence 的手停在那条布上。
+
+"You still say that word like it belongs to you." / “你现在还把那个词说得像是属于你。”
+
+He looks up at last. / 他终于抬眼。
+
+"Bring a tag. Any side." / “带一枚狗牌。哪边都行。”
+- Any side? / 哪边都行？ -> proof_side
+- Fine. I'll bring you one. / 行，我去带一枚回来。 -> root | accept: proof
+- Not now. / 现在不谈。 -> @close
+
+<proof_side> bg: FenceBackGround.png
+"USEC. BEAR." / “USEC。BEAR。”
+
+Fence folds the cloth again. Neater this time. / Fence 又把布条折好。这一次更整齐。
+
+"The ground does not care which patch they wore." / “地面不在乎他们戴哪块臂章。”
+- Fine. I'll bring you one. / 行，我去带一枚回来。 -> root | accept: proof
+- Not now. / 现在不谈。 -> @close
+
+<proof_cutoff> bg: FenceBackGround.png
+Fence pushes the casing back into the dark with one finger. / Fence 用一根手指把弹壳推回阴影里。
+
+"It means you heard the price." / “意思是你听见价了。”
+
+"One tag." / “一枚狗牌。”
+- Fine. I'll bring you one. / 行，我去带一枚回来。 -> root | accept: proof
+- Not now. / 现在不谈。 -> @close
+
 <alive_price> bg: FenceBackGround.png
-One tag only tells me you saw a dead man. It does not tell me you can still walk a road alone. Go back to Customs. Clear some noise. Come back breathing. / 一枚狗牌，只能说明你见过死人。不能说明你还能一个人走完一条路。回海关，清掉些噪音。活着回来。
+Fence does not look at you first. / Fence 没有先看你。
+
+The dogtag lies under his fingers. He turns it once. The chain scrapes across the table. / 狗牌压在他的指下。他把它翻了一面，链子刮过桌面。
+
+He does not read the name aloud. / 他没有念出上面的名字。
+
+"Customs." / “海关。”
+
+A folded map sits near his elbow. One corner is dark with old grease. / 一张折好的地图压在他肘边。角落沾着旧油污。
+
+"You know that road." / “你认识那条路。”
+
+A pause. / 停顿。
+
+"Maybe it remembers you too." / “也许它也还记得你。”
+- What are you testing? / 你到底想试什么？ -> alive_price_question
+- You know where I woke up. / 你知道我在哪里醒来的。 -> alive_price_oldgas
 - I'll clear the road. / 我会把路清出来。 -> root | accept: alive_price
 - The road is clear. / 路清了。 -> root | complete: alive_price
 # Only useful out of raid. In raid this option no-ops by VisitAPI design.
 - Show me your tasks. / 给我看看你的任务。 -> @tasks
+- Not now. / 现在不谈。 -> @close
+
+<alive_price_question> bg: FenceBackGround.png
+Fence smiles without warmth. / Fence 笑了一下，没有温度。
+
+He taps the dogtag once. / 他敲了一下那枚狗牌。
+
+"This only says someone else died." / “这只能说明别人死了。”
+
+He looks at your hands, not your face. / 他看着你的手，没有看你的脸。
+
+"It says nothing about you." / “说明不了你。”
+- I'll clear the road. / 我会把路清出来。 -> root | accept: alive_price
+- You know where I woke up. / 你知道我在哪里醒来的。 -> alive_price_oldgas
+- Not now. / 现在不谈。 -> @close
+
+<alive_price_oldgas> bg: FenceBackGround.png
+The room goes quiet. / 房间安静下来。
+
+Fence's hand stops on the map. / Fence 的手停在地图上。
+
+Old Gas is marked with a black circle. No label. / 旧加油站被黑笔圈了出来。没有标注。
+
+He folds the map before you can look longer. / 在你看清更多之前，他把地图折了起来。
+
+"Customs." / “海关。”
+- What did you see there? / 你在那里看见了什么？ -> alive_price_cutoff
+- I'll go. / 我去。 -> root | accept: alive_price
+- Not now. / 现在不谈。 -> @close
+
+<alive_price_cutoff> bg: FenceBackGround.png
+Fence looks past you, toward the board behind him. / Fence 的视线越过你，看向他身后的情报板。
+
+For a moment, his fingers close around the edge of the table. / 有那么一瞬间，他的手指扣住了桌沿。
+
+Then he lets go. / 然后松开。
+
+"Five Scavs." / “五个 Scav。”
+
+"Come back breathing." / “活着回来。”
+- I'll clear the road. / 我会把路清出来。 -> root | accept: alive_price
 - Not now. / 现在不谈。 -> @close
