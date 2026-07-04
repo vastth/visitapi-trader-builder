@@ -10,9 +10,11 @@ quest alive_price = 69f1ce000000000000000002
 trigger: raid bigmap (310.1499, -1.9962151, -175.2366) dist 3 radius 1.2 repeat "Talk to Fence"
 
 <root> bg: FenceBackGround.png
-The room behind the black channel is quiet. Too quiet. Something metal moves once on wood. / 黑色频道后面的房间很安静。安静得过分。有什么金属物在木桌上轻轻动了一下。
+The room is too quiet. / 房间很安静。安静得过分。
 
-Fence does not greet you. / Fence 没有问候你。
+An old casing shifts at the corner of the table. / 桌角有一枚旧弹壳，微微滚动了一下。
+
+Fence does not look up. / Fence 没有抬头。
 
 "You came." / “你来了。”
 
@@ -26,13 +28,13 @@ A pause. / 停顿。
 - I'm leaving. / 我走了。 -> @close
 
 <proof> bg: FenceBackGround.png
-A strip of cloth lies on the table, folded once. No insignia. No blood you can see. / 桌上放着一条折过一次的布条。没有标记。也看不见血。
+The room is too quiet. / 房间很安静。安静得过分。
 
-Fence keeps one finger on it, as if the thing might crawl away. / Fence 用一根手指压着它，像是怕那东西自己爬走。
+A strip of cloth lies on the table. Fence presses it down hard with one finger. / 桌上只放着一条折过的布条。Fence 用一根手指死死压着它。
 
-"A tag." / “一枚狗牌。”
+"A tag." / “狗牌。”
 
-He does not say USEC. He does not say BEAR. / 他没有说 USEC。也没有说 BEAR。
+He mentions neither USEC nor BEAR. / 他没有提 USEC，也没有提 BEAR。
 
 "Metal remembers better than men." / “金属比人记得牢。”
 - Why a dogtag? / 为什么是狗牌？ -> proof_question
@@ -46,17 +48,17 @@ He does not say USEC. He does not say BEAR. / 他没有说 USEC。也没有说 B
 - Not now. / 现在不谈。 -> @close
 
 <proof_question> bg: FenceBackGround.png
-Fence turns the cloth over. There is nothing on the other side. / Fence 把那条布翻了一面。另一面什么都没有。
+Fence turns the cloth over. The other side is blank. / Fence 把布条翻了一面。另一面空空如也。
 
 "Because a mouth lies." / “因为嘴会撒谎。”
 
-He taps the table once. / 他敲了一下桌面。
+He taps the table once. The sound is dull. / 他敲了一下桌面，声音很闷。
 
 "A tag only says someone stopped moving." / “狗牌只说明有人停下了。”
 
-Another pause. / 又一次停顿。
+A pause. / 停顿。
 
-"Bring me one. Then we talk about what you are." / “带一枚回来。然后再谈你算什么。”
+"Bring one back." / “带一枚回来。”
 - Fine. I'll bring you one. / 行，我去带一枚回来。 -> root | accept: proof
 - You are buying names. / 你在买名字。 -> proof_names
 - Not now. / 现在不谈。 -> @close
@@ -108,17 +110,15 @@ Fence pushes the casing back into the dark with one finger. / Fence 用一根手
 <alive_price> bg: FenceBackGround.png
 Fence does not look at you first. / Fence 没有先看你。
 
-The dogtag lies under his fingers. He turns it once. The chain scrapes across the table. / 狗牌压在他的指下。他把它翻了一面，链子刮过桌面。
-
-He does not read the name aloud. / 他没有念出上面的名字。
+The dogtag lies under his fingers. He turns it slowly. The chain scrapes across the table, sharp. / 狗牌压在他的指下。他慢慢把它翻了一面，链子刮过桌面，声音刺耳。
 
 "Customs." / “海关。”
 
-A folded map sits near his elbow. One corner is dark with old grease. / 一张折好的地图压在他肘边。角落沾着旧油污。
+An old folded map lies by his hand, corner blackened. / 旧地图躺在他手边，角落发黑。
 
 "You know that road." / “你认识那条路。”
 
-A pause. / 停顿。
+The room falls quiet for a moment. / 房间安静了一会儿。
 
 "Maybe it remembers you too." / “也许它也还记得你。”
 - What are you testing? / 你到底想试什么？ -> alive_price_question
@@ -130,13 +130,13 @@ A pause. / 停顿。
 - Not now. / 现在不谈。 -> @close
 
 <alive_price_question> bg: FenceBackGround.png
-Fence smiles without warmth. / Fence 笑了一下，没有温度。
+Fence's mouth twitches, but he doesn't smile. / Fence 嘴角微微一动，却没有笑出来。
 
-He taps the dogtag once. / 他敲了一下那枚狗牌。
+He taps the dogtag once with his fingertip. / 他用指尖敲了一下狗牌。
 
 "This only says someone else died." / “这只能说明别人死了。”
 
-He looks at your hands, not your face. / 他看着你的手，没有看你的脸。
+He looks at your hands, not your face. / 他盯着你的手，而不是脸。
 
 "It says nothing about you." / “说明不了你。”
 - I'll clear the road. / 我会把路清出来。 -> root | accept: alive_price
@@ -144,13 +144,13 @@ He looks at your hands, not your face. / 他看着你的手，没有看你的脸
 - Not now. / 现在不谈。 -> @close
 
 <alive_price_oldgas> bg: FenceBackGround.png
-The room goes quiet. / 房间安静下来。
+The air in the room grows heavy. / 房间里的空气忽然沉了下去。
 
-Fence's hand stops on the map. / Fence 的手停在地图上。
+Fence's fingers freeze on the map. / Fence 的手指停在地图上，一动不动。
 
-Old Gas is marked with a black circle. No label. / 旧加油站被黑笔圈了出来。没有标注。
+Old Gas is heavily circled in black. No label. / 旧加油站被黑笔重重圈住。没有一个字的标注。
 
-He folds the map before you can look longer. / 在你看清更多之前，他把地图折了起来。
+He folds the map before you can see more. / 在你看清楚之前，他迅速把地图折起。
 
 "Customs." / “海关。”
 - What did you see there? / 你在那里看见了什么？ -> alive_price_cutoff
@@ -158,14 +158,15 @@ He folds the map before you can look longer. / 在你看清更多之前，他把
 - Not now. / 现在不谈。 -> @close
 
 <alive_price_cutoff> bg: FenceBackGround.png
-Fence looks past you, toward the board behind him. / Fence 的视线越过你，看向他身后的情报板。
+Fence looks past you toward the board behind him. / Fence 的视线越过你，落在身后的情报板上。
 
-For a moment, his fingers close around the edge of the table. / 有那么一瞬间，他的手指扣住了桌沿。
+For a moment, his fingers grip the edge of the table tightly, knuckles white. / 一瞬间，他的手指死死扣住桌沿，指节发白。
 
-Then he lets go. / 然后松开。
+Then he releases it. / 随后松开。
 
 "Five Scavs." / “五个 Scav。”
 
 "Come back breathing." / “活着回来。”
 - I'll clear the road. / 我会把路清出来。 -> root | accept: alive_price
 - Not now. / 现在不谈。 -> @close
+
